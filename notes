@@ -1,0 +1,3 @@
+<< : non-standard operator operator - stream insert operator - output stream
+>> : non-standard operator - stream extraction operator - input stream
+:: : scope resolution opeartor
