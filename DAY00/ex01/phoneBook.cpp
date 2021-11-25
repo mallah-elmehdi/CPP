@@ -1,28 +1,40 @@
-#include <iostream>
-#include "phoneBookClass.hpp"
-#include "phoneBookMethod.hpp"
 
-void	add_contact(PhoneBook crappy_phone_book)
+
+int		valid_index(std::string	index)
 {
-	std::string	holder;
-	Contact		contact;
-	
-	std::cout << "Please enter your first name: ";	
-	std::cin >> holder;
-	contact.add_contact_first_name(holder);
-	std::cout << "Please enter your last name: ";	
-	std::cin >> holder;
-	contact.add_contact_last_name(holder);
-	std::cout << "Please enter your nikename: ";	
-	std::cin >> holder;
-	contact.add_contact_nickname(holder);
-	std::cout << "Please enter your phone number: ";	
-	std::cin >> holder;
-	contact.add_contact_phone_number(holder);
-	std::cout << "Please enter your darkest secret: ";	
-	std::cin >> holder;
-	contact.add_contact_darkest_secret(holder);
-	crappy_phone_book.add_contact(&contact);
+	for (size_t i = 0; index[i]; i++)
+	{
+		if (!isdigit(index[i]))
+			return (false);
+	}
+	return (true);
+}
+
+void	show_contact_info(PhoneBook *crappy_phone_book, std::string	index)
+{
+	int i;
+
+	i = std::stoi(index);
+	if (i < 0 || i > 7)
+		std::cout << "please enter a valid index [0,8]\n";
+	else
+		crappy_phone_book->show_one_contact(i);
+}
+
+void	search_contact(PhoneBook *crappy_phone_book)
+{
+	std::string	index;
+
+	crappy_phone_book->search_contact();
+	while (1)
+	{
+		std::cout << "(SEARCH) > : ";
+		std::cin >> index;
+		if (valid_index(index))
+			show_contact_info(crappy_phone_book, index);
+		else
+			break ;
+	}
 }
 
 int main(void)
@@ -34,13 +46,15 @@ int main(void)
 	while (1)
 	{
 		std::cout << "> : ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input.compare("ADD") == 0)
-			add_contact(crappy_phone_book);
+			add_contact(&crappy_phone_book);
 		else if (input.compare("SEARCH") == 0)
-			crappy_phone_book.search_contact();
+			search_contact(&crappy_phone_book);
 		else if (input.compare("EXIT") == 0)
 			break ;
+		else
+			std::cout << "(" << input << ") : command not found\n" ;
 	}
 	return (0);
 }

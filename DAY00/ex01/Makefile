@@ -1,6 +1,6 @@
 NAME = phoneBook
 
-FLAG = -Wall -Wextra -Werror -g -fsanitize=address
+FLAG = -Wall -Wextra -Werror
 
 FILE = phoneBook.cpp
 
