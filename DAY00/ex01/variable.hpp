@@ -6,5 +6,7 @@
 # include <cctype>
 # include "phoneBookClass.hpp"
 # include "phoneBookMethod.hpp"
+# include "contactClass.hpp"
+# include "contactMethod.hpp"
 
 #endif
