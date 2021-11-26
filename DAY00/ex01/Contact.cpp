@@ -1,6 +1,5 @@
-#include "variable.hpp"
+# include "Contact.hpp"
 
-// ------------------------------------------ INIT METHODS
 void	Contact::init(void)
 {
 	done = 0;
@@ -9,7 +8,6 @@ int		Contact::get_done(void)
 {
 	return (done);
 }
-// ------------------------------------------ ADD METHODS
 void	Contact::add_contact_first_name(std::string holder)
 {
 	if (holder.size() > 0)
@@ -50,7 +48,6 @@ void	Contact::add_contact_darkest_secret(std::string holder)
 		done = 1;
 	}
 }
-// ------------------------------------------ SEARCH METHODS
 std::string	Contact::search_contact_first_name(void)
 {
 	return (first_name);

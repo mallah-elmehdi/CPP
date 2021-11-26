@@ -2,7 +2,7 @@ NAME = phoneBook
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp addContact.cpp addContactUtil.cpp searchContact.cpp
+FILE = main.cpp Contact.cpp PhoneBook.cpp addContact.cpp addContactUtil.cpp searchContact.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 

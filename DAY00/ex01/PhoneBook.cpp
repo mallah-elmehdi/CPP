@@ -1,15 +1,10 @@
-#ifndef _PHONEBOOKMETHOD_HPP 
-#define _PHONEBOOKMETHOD_HPP
+# include "PhoneBook.hpp"
 
-# include "variable.hpp"
-
-// ----------------------------------------------- INIT METHOD
 void	PhoneBook::init_contact(void)
 {
 	for (size_t i = 0; i < 8; i++)
 		contacts[i].init();
 }
-// ----------------------------------------------- ADD METHOD
 void	PhoneBook::add_contact_first_name(std::string holder, int i)
 {
 	contacts[i].add_contact_first_name(holder);
@@ -30,7 +25,6 @@ void	PhoneBook::add_contact_darkest_secret(std::string holder, int i)
 {
 	contacts[i].add_contact_darkest_secret(holder);
 }
-// ----------------------------------------------- SEARCH METHOD
 void	print_result(std::string holder)
 {
 	if (holder.size() > 10)
@@ -60,16 +54,13 @@ void	PhoneBook::show_one_contact(int i)
 {
 	if (contacts[i].get_done())
 	{
-		std::cout << "Index : " << i << ".\n";
-		std::cout << "First Nmae : " << contacts[i].search_contact_first_name() << ".\n";
-		std::cout << "Last Nmae : " << contacts[i].search_contact_last_name() << ".\n";
-		std::cout << "Nickname : " << contacts[i].search_contact_nickname() << ".\n";
-		std::cout << "Phone Number : " << contacts[i].search_contact_phone_number() << ".\n";
-		std::cout << "Darkest Sucret: " << contacts[i].search_contact_darkest_secret() << ".\n";
+		std::cout << "Index " << std::setw(9) << std::setfill(' ') << " : " << i << ".\n";
+		std::cout << "First Name " << std::setw(4) << std::setfill(' ') << " : " << contacts[i].search_contact_first_name() << ".\n";
+		std::cout << "Last Name " << std::setw(5) << std::setfill(' ') << " : " << contacts[i].search_contact_last_name() << ".\n";
+		std::cout << "Nickname " << std::setw(6) << std::setfill(' ') << " : " << contacts[i].search_contact_nickname() << ".\n";
+		std::cout << "Phone Number " << std::setw(2) << std::setfill(' ') << " : " << contacts[i].search_contact_phone_number() << ".\n";
+		std::cout << "Darkest Sucret : " << contacts[i].search_contact_darkest_secret() << ".\n";
 	}
 	else
 		std::cout << "No Contact in this index\n";
-
 }
-
-#endif

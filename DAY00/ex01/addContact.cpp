@@ -1,4 +1,4 @@
-#include "phoneBook.hpp"
+#include "_header.hpp"
 
 int	valid_phone_number(std::string phone_number)
 {
@@ -6,7 +6,7 @@ int	valid_phone_number(std::string phone_number)
 		return (false);
 	for (size_t i = 1; phone_number[i]; i++)
 	{
-		if (!isdigit(phone_number[0]))
+		if (!isdigit(phone_number[i]))
 			return (false);
 	}
 	return (true);

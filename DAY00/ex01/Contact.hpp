@@ -1,4 +1,7 @@
-#include "variable.hpp"
+#ifndef _CLASS_HPP
+#define _CLASS_HPP
+
+# include "_var.hpp"
 
 class Contact
 {
@@ -23,3 +26,5 @@ class Contact
 		std::string	search_contact_phone_number(void);
 		std::string	search_contact_darkest_secret(void);
 };
+
+#endif
