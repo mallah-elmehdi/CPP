@@ -2,6 +2,8 @@
 
 int	valid_phone_number(std::string phone_number)
 {
+	if (phone_number.size() > 14 || phone_number.size() < 10)
+		return (false);
 	if (phone_number[0] != '+' && !isdigit(phone_number[0]))
 		return (false);
 	for (size_t i = 1; phone_number[i]; i++)

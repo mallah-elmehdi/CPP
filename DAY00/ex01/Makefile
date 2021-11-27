@@ -1,4 +1,4 @@
-NAME = phoneBook
+NAME = awesomePhoneBook
 
 FLAG = -Wall -Wextra -Werror
 

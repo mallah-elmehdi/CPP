@@ -16,7 +16,7 @@ int main(void)
 			search_contact(&crappy_phone_book);
 		else if (input.compare("EXIT") == 0)
 			break ;
-		else
+		else if (input.size() > 0)
 			std::cout << "(" << input << ") : command not found\n" ;
 	}
 	return (0);
