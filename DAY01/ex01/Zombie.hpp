@@ -11,12 +11,12 @@ class Zombie
 		Zombie(void);
 		Zombie(std::string added_name);
 		void	announce(void);
+		void	set_name(std::string added_name);
 		~Zombie();
 };
 
 // -----
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie* zombieHorde(int N, std::string name);
 // -----
 
 #endif
