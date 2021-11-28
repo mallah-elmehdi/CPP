@@ -1,5 +1,19 @@
 #include "_header.hpp"
 
+std::string	trim_string(std::string input)
+{
+	int	start;
+	int	end;
+
+	start = input.find_first_not_of(" \t");
+	if (start > 0)
+		input = input.substr(start, input.size());
+	end = input.find_last_not_of(" \t");
+	if (end != 0)
+		input.erase(end + 1, input.size() - end);
+	return (input);
+}
+
 int	valid_phone_number(std::string phone_number)
 {
 	if (phone_number.size() > 14 || phone_number.size() < 10)

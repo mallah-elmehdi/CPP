@@ -50,29 +50,29 @@ void	PhoneBook::search_contact(void)
 		}
 	}
 }
-void	PhoneBook::show_one_contact(int i)
+void 	PhoneBook::show_one_contact(int i)
 {
 	if (contacts[i].get_done())
 	{
 		//-----------
 		std::cout << "Index";
-		std::cout << std::setw(12) << std::setfill(' ');
+		std::cout << std::setw(12);
 		std::cout << " : " << i << ".\n";
 		//-----------
 		std::cout << "First Name";
-		std::cout << std::setw(7) << std::setfill(' ');
+		std::cout << std::setw(7);
 		std::cout << " : " << contacts[i].search_contact_first_name() << ".\n";
 		//-----------
 		std::cout << "Last Name";
-		std::cout << std::setw(8) << std::setfill(' ');
+		std::cout << std::setw(8);
 		std::cout << " : " << contacts[i].search_contact_last_name() << ".\n";
 		//-----------
 		std::cout << "Nickname";
-		std::cout << std::setw(9) << std::setfill(' ');
+		std::cout << std::setw(9);
 		std::cout << " : " << contacts[i].search_contact_nickname() << ".\n";
 		//-----------
 		std::cout << "Phone Number";
-		std::cout << std::setw(5) << std::setfill(' ');
+		std::cout << std::setw(5);
 		std::cout << " : " << contacts[i].search_contact_phone_number() << ".\n";
 		//-----------
 		std::cout << "Darkest Sucret : " << contacts[i].search_contact_darkest_secret() << ".\n";
