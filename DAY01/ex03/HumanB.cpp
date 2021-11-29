@@ -4,11 +4,13 @@
 HumanB::HumanB(void)
 {
 	the_weapon = nullptr;
+	std::cout << "===============> HumanB Contructor called" << std::endl;
 }
 
 HumanB::HumanB(Weapon *add_the_weapon)
 {
 	the_weapon = add_the_weapon;
+	std::cout << "===============> HumanB Contructor called" << std::endl;
 }
 
 void    HumanB::attack(void)
@@ -20,4 +22,9 @@ void    HumanB::attack(void)
 void    HumanB::set_name(std::string added_name)
 {
 	name = added_name;
+}
+
+HumanB::~HumanB(void)
+{
+	std::cout << "===============> HumanB Destructor called (" << name << ")" << std::endl;
 }
