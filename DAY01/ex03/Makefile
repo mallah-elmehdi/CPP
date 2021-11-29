@@ -1,15 +1,16 @@
-NAME = zombieHorde
+NAME = unnecessaryViolence
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp Zombie.cpp ZombieHorde.cpp
+FILE = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME): $(FILE)
-	@clang++ $(FLAG) $(FILE) -o $(NAME)
+	# @clang++ $(FLAG) $(FILE) -o $(NAME)
+	@g++ $(FLAG) $(FILE) -o $(NAME)
 
 clean:
 	@rm -fr $(FILE_OBJ)

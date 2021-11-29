@@ -9,8 +9,7 @@ FILE_OBJ = $(FILE:.cpp=.o)
 all : $(NAME)
 
 $(NAME): $(FILE)
-	@clang++ $(FLAG) -c $(FILE)
-	@clang++ $(FILE_OBJ) -o $(NAME)
+	@clang++ $(FLAG) $(FILE) -o $(NAME)
 
 clean:
 	@rm -fr $(FILE_OBJ)
