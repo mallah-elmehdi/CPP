@@ -23,14 +23,14 @@ int	condition_error(std::string str)
 int main()
 {
 	Karen miss_karen;
-	std::cout << "\n********************* DEBUG\n" << std::endl;
+	std::cout << std::endl << "********************* DEBUG" << std::endl << std::endl;
 	miss_karen.complain("DEBUG");
-	std::cout << "\n********************* INFO\n" << std::endl;
+	std::cout << std::endl << "********************* INFO" << std::endl << std::endl;
 	miss_karen.complain("INFO");
-	std::cout << "\n********************* WARNING\n" << std::endl;
+	std::cout << std::endl << "********************* WARNING" << std::endl << std::endl;
 	miss_karen.complain("WARNING");
-	std::cout << "\n********************* ERROR\n" << std::endl;
+	std::cout << std::endl << "********************* ERROR" << std::endl << std::endl;
 	miss_karen.complain("ERROR");
-	std::cout << "\n********************* NOT VALID\n" << std::endl;
+	std::cout << std::endl << "********************* NOT VALID" << std::endl << std::endl;
 	miss_karen.complain("NOT VALID");
 }

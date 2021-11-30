@@ -26,7 +26,7 @@ void Karen::complain(std::string level)
 	void (Karen::*info_ptr) (void) = &Karen::info;
 	void (Karen::*warning_ptr) (void) = &Karen::warning;
 	void (Karen::*error_ptr) (void) = &Karen::error;
-	
+
 	switch (condition_debug(level))
 	{
 		case 1:
