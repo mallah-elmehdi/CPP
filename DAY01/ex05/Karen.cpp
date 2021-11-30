@@ -22,24 +22,34 @@ void Karen::error(void)
 
 void Karen::complain(std::string level)
 {
-	void (Karen::*debug_ptr) (void) = &Karen::debug;
-	void (Karen::*info_ptr) (void) = &Karen::info;
-	void (Karen::*warning_ptr) (void) = &Karen::warning;
-	void (Karen::*error_ptr) (void) = &Karen::error;
-
-	switch (conditions(level))
+	void (Karen::*f_ptr[]) (void) = {
+		&Karen::debug,
+		&Karen::info,
+		&Karen::warning,
+		&Karen::error
+	};
+	std::string levels[] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+	int index = 0;
+	while (index < 4 && levels[index] != level)
+		index++;
+	switch (index)
 	{
+		case 0:
+			(this->*f_ptr[0])();
+			break ;
 		case 1:
-			(this->*debug_ptr)();
+			(this->*f_ptr[1])();
 			break ;
 		case 2:
-			(this->*info_ptr)();
+			(this->*f_ptr[2])();
 			break ;
 		case 3:
-			(this->*warning_ptr)();
-			break ;
-		case 4:
-			(this->*error_ptr)();
+			(this->*f_ptr[3])();
 			break ;
 	}
 }

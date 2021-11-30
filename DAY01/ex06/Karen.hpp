@@ -14,6 +14,4 @@ class Karen
 		void complain(std::string level);
 };
 
-int	conditions(std::string str);
-
 #endif
