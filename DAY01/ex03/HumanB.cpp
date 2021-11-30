@@ -7,9 +7,9 @@ HumanB::HumanB(void)
 	std::cout << "===============> HumanB Contructor called" << std::endl;
 }
 
-HumanB::HumanB(Weapon *add_the_weapon)
+HumanB::HumanB(std::string added_name)
 {
-	the_weapon = add_the_weapon;
+	this->name = added_name;
 	std::cout << "===============> HumanB Contructor called" << std::endl;
 }
 
@@ -19,9 +19,9 @@ void    HumanB::attack(void)
 		std::cout << name << " attacks with his " << the_weapon->getType() << std::endl;
 }
 
-void    HumanB::set_name(std::string added_name)
+void    HumanB::setWeapon(Weapon *wpn)
 {
-	name = added_name;
+	this->the_weapon = wpn;
 }
 
 HumanB::~HumanB(void)

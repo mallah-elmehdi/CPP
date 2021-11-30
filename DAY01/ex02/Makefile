@@ -1,4 +1,4 @@
-NAME = zombieHorde
+NAME = hi_this_is_brain
 
 FLAG = -Wall -Wextra -Werror
 
@@ -9,8 +9,7 @@ FILE_OBJ = $(FILE:.cpp=.o)
 all : $(NAME)
 
 $(NAME): $(FILE)
-	# @clang++ $(FLAG) $(FILE) -o $(NAME)
-	@g++ $(FLAG) $(FILE) -o $(NAME)
+	@clang++ -std=c++98 $(FLAG) $(FILE) -o $(NAME)
 
 clean:
 	@rm -fr $(FILE_OBJ)

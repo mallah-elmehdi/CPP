@@ -5,6 +5,12 @@ Weapon::Weapon(void)
 	std::cout << "===============> Weapon Contructor called" << std::endl;
 }
 
+Weapon::Weapon(std::string added_type)
+{
+	this->type = added_type;
+	std::cout << "===============> Weapon Contructor called" << std::endl;
+}
+
 void Weapon::setType(std::string added_type)
 {
 	type = added_type;

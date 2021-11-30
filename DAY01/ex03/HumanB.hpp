@@ -10,9 +10,9 @@ class HumanB
 		std::string name;
 	public:
 		HumanB(void);
-		HumanB(Weapon *add_the_weapon);
-		void set_name(std::string added_name);
+		HumanB(std::string added_name);
 		void attack(void);
+		void setWeapon(Weapon *wpn);
 		~HumanB(void);
 };
 

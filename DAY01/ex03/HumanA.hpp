@@ -9,8 +9,7 @@ class HumanA
 		Weapon& the_weapon;
 		std::string name;
 	public:
-		HumanA(Weapon& add_the_weapon);
-		void set_name(std::string added_name);
+		HumanA(std::string added_name, Weapon& add_the_weapon);
 		void attack(void);
 		~HumanA(void);
 };
