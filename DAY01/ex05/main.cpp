@@ -1,24 +1,33 @@
 #include "Karen.hpp"
 
-int	condition_debug(std::string str)
+int	conditions(std::string str)
 {
-	return (str == "DEBUG");
+	int i;
+	
+	i = 1;
+	while (str != "DEBUG")
+	{
+		i++;
+		while (str != "INFO")
+		{
+			i++;
+			while (str != "WARNING")
+			{
+				i++;
+				while (str != "ERROR" )
+				{
+					i = 0;
+					break ;
+				}
+				break ;
+			}
+			break ;
+		}
+		break ;
+	}
+	return (i);
 }
 
-int	condition_info(std::string str)
-{
-	return (str == "INFO");
-}
-
-int	condition_warning(std::string str)
-{
-	return (str == "WARNING");
-}
-
-int	condition_error(std::string str)
-{
-	return (str == "ERROR");
-}
 
 int main()
 {

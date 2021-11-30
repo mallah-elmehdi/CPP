@@ -26,20 +26,23 @@ void Karen::complain(std::string level)
 	void (Karen::*info_ptr) (void) = &Karen::info;
 	void (Karen::*warning_ptr) (void) = &Karen::warning;
 	void (Karen::*error_ptr) (void) = &Karen::error;
-
+	
 	switch (conditions(level))
 	{
 		case 1:
+			std::cout << "[ DEBUG ]" << std::endl;
 			(this->*debug_ptr)();
-			break ;
 		case 2:
+			std::cout << "[ INFO ]" << std::endl;
 			(this->*info_ptr)();
-			break ;
 		case 3:
+			std::cout << "[ WARNING ]" << std::endl;
 			(this->*warning_ptr)();
-			break ;
 		case 4:
+			std::cout << "[ ERROR ]" << std::endl;
 			(this->*error_ptr)();
 			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
