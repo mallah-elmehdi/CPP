@@ -1,8 +1,8 @@
-NAME = scavtrap
+NAME = fragtrap
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp ClapTrap.cpp ScavTrap.cpp
+FILE = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 

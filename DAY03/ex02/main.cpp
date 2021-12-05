@@ -1,4 +1,5 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
@@ -12,6 +13,11 @@ int main(void)
 	spider_man.takeDamage(95);
 	spider_man.beRepaired(60);
 	spider_man.guardGate();
+	std::cout << std::endl;
+	FragTrap batman("Batman");
+	batman.beRepaired(60);
+	batman.takeDamage(95);
+	batman.highFivesGuys();
 	std::cout << std::endl;
 	return (0);
 }
