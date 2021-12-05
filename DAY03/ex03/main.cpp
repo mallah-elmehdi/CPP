@@ -1,5 +1,4 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
@@ -18,6 +17,11 @@ int main(void)
 	batman.beRepaired(60);
 	batman.takeDamage(95);
 	batman.highFivesGuys();
+	std::cout << std::endl;
+	DiamondTrap dr_strange("Batman");
+	dr_strange.beRepaired(60);
+	dr_strange.takeDamage(95);
+	dr_strange.highFivesGuys();
 	std::cout << std::endl;
 	return (0);
 }
