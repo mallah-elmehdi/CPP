@@ -3,6 +3,7 @@
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {
@@ -12,8 +13,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap& object);
-		DiamondTrap(std::string child_name, int child_hitpoints, int child_energy_points, int child_attack_damage);
 		~DiamondTrap(void);
+		void whoAmI(void);
 };
 
 #endif

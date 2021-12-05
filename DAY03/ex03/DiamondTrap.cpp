@@ -1,22 +1,40 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap("untitled", 100, 100, 30)
+DiamondTrap::DiamondTrap(void)
 {
 	std::cout << "[ DiamondTrap constructor ] : called!" << std::endl;
+	this->name = "untitled";
+	ClapTrap::name = this->name + "_" + ClapTrap::name;
+	this->hitpoints = FragTrap::hitpoints;
+	this->energy_points = ScavTrap::energy_points;
+	this->attack_damage = FragTrap::attack_damage;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name, 100, 100, 30)
+DiamondTrap::DiamondTrap(std::string name)
 {
 	std::cout << "[ DiamondTrap constructor ] : called!" << std::endl;
+	this->name = name;
+	ClapTrap::name = this->name + "_" + ClapTrap::name;
+	this->hitpoints = FragTrap::hitpoints;
+	this->energy_points = ScavTrap::energy_points;
+	this->attack_damage = FragTrap::attack_damage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& object)
 {
-	(void)object;
 	std::cout << "[ DiamondTrap copy constructor ] : called!" << std::endl;
+	this->name = object.name;
+	this->hitpoints = object.hitpoints;
+	this->energy_points = object.energy_points;
+	this->attack_damage = object.attack_damage;
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
 	std::cout << "[ DiamondTrap destructor ] : called!" << std::endl;
 }
+
+void DiamondTrap::whoAmI(void)
+{
+	std::cout << "I'm " << this->name << " my grandparent ClapTrap name is " << ClapTrap::name << std::endl;
+} 

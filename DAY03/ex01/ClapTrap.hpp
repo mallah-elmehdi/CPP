@@ -14,7 +14,6 @@ class ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& object);
-		ClapTrap(std::string child_name, int child_hitpoints, int child_energy_points, int child_attack_damage);
 		~ClapTrap(void);
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);

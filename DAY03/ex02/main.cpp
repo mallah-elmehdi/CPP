@@ -5,7 +5,7 @@ int main(void)
 {
 	ClapTrap super_man("Super man");
 	super_man.takeDamage(35);
-	super_man.attack("Joker");
+	super_man.attack("Thanos");
 	super_man.beRepaired(100);
 	std::cout << std::endl;
 	ScavTrap spider_man("Spider Man");
@@ -15,6 +15,7 @@ int main(void)
 	spider_man.guardGate();
 	std::cout << std::endl;
 	FragTrap batman("Batman");
+	batman.attack("Joker");
 	batman.beRepaired(60);
 	batman.takeDamage(95);
 	batman.highFivesGuys();
