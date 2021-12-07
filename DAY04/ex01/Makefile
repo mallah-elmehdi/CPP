@@ -2,7 +2,7 @@ NAME = polymorphism_01
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+FILE = Animal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 

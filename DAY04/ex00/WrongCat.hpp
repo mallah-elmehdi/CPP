@@ -5,7 +5,7 @@
 
 class WrongCat : public WrongAnimal
 {
-	protected:
+	private:
 		std::string type;
 	public:
 		WrongCat(void);

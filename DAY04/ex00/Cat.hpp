@@ -5,7 +5,7 @@
 
 class Cat : public Animal
 {
-	protected:
+	private:
 		std::string type;
 	public:
 		Cat(void);
