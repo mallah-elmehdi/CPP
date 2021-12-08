@@ -1,8 +1,8 @@
-NAME = bureaucrat_00
+NAME = bureaucrat_01
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp Bureaucrat.cpp
+FILE = main.cpp Bureaucrat.cpp Form.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 

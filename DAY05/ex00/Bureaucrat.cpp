@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -30,4 +30,10 @@ void Bureaucrat::increment_grade(void)
 	if ((this->grade - 1) < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->grade--;
+}
+
+std::ostream& operator<< (std::ostream &stream, const Bureaucrat& object)
+{
+	stream << object.getName() << ", bureaucrat grade " << object.getGrade();
+	return (stream);
 }
