@@ -4,22 +4,22 @@
 // * CONSTRUCTOR / DESTRUCTOR *
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
-	std::cout << "[ Bureaucrat parameterized constructor ]" << std::endl;
+	//std::cout << "[ Bureaucrat parameterized constructor ]" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(void) : name("untitled"), grade(0)
 {
-	std::cout << "[ Bureaucrat default constructor ]" << std::endl;
+	//std::cout << "[ Bureaucrat default constructor ]" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "[ Bureaucrat destructor ]" << std::endl;
+	//std::cout << "[ Bureaucrat destructor ]" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &object) : name(object.name), grade(object.grade)
 {
-	std::cout << "[ Bureaucrat destructor ]" << std::endl;
+	//std::cout << "[ Bureaucrat destructor ]" << std::endl;
 }
 
 // * MEMBER FUNCTION *

@@ -2,7 +2,7 @@ NAME = bureaucrat_01
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp
+FILE = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 

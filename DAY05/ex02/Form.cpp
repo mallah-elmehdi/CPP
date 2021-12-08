@@ -1,21 +1,22 @@
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
 
 // * CONSTRUCTOR / DESTRUCTOR *
 Form::Form(void): name("untitled")
 {
-	std::cout << "[ Form default constructor ]" << std::endl;
+	//std::cout << "[ Form default constructor ]" << std::endl;
 	is_signed = false;
 }
 
 Form::Form(std::string name): name(name)
 {
-	std::cout << "[ Form parameterized constructor ]" << std::endl;
+	//std::cout << "[ Form parameterized constructor ]" << std::endl;
 	is_signed = false;
 }
 
 Form::~Form(void)
 {
-	std::cout << "[ Form destructor ]" << std::endl;
+	//std::cout << "[ Form destructor ]" << std::endl;
 }
 
 // * MEMBER FUNCTION *
@@ -73,23 +74,6 @@ void Form::beSigned(Bureaucrat &object)
 	else if (object.getGrade() > 150 || object.getGrade() > this->sign)
 		throw Form::GradeTooLowException();
 	this->is_signed = true;
-}
-
-void Form::execute(Bureaucrat const & executor) const
-{
-	if (this->is_signed)
-	{
-		if (executor.getGrade() <= this->exec && executor.getGrade() <= 1)
-		{
-			//execute
-		}
-		else if (executor.getGrade() > 150)
-			throw GradeTooLowException();
-		else
-			throw GradeTooHighException();
-	}
-	else
-		throw FormNotSignedException();
 }
 
 //operator overload

@@ -32,9 +32,8 @@ class Form
 		int			getExec(void) const;
 		bool		getSignature(void) const;
 		// - other
-		//virtual void this_is_an_abstract_class(void) = 0;
 		void		beSigned(Bureaucrat &object);
-		void		execute(Bureaucrat const & executor) const;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 		//exception subclasses
 		class		GradeTooHighException : public std::exception
 		{
@@ -58,6 +57,14 @@ class Form
 				virtual const char* what() const throw()
 				{
 					return ("[ Exception thrown ] : form not signed");
+				}
+		};
+		class		FileErrorException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("[ Exception thrown ] : file error");
 				}
 		};
 };
