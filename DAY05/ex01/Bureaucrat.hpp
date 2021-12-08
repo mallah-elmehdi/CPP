@@ -11,10 +11,13 @@ class Bureaucrat
 		const std::string	name;
 		const int			grade;
 	public:
-		//Bureaucrat(void);
-		Bureaucrat(std::string name, int grade);
+		//constructor / destructor
+		Bureaucrat(void);
 		~Bureaucrat(void);
-		std::string	getName(void) const;
+		Bureaucrat(const Bureaucrat &object);
+		Bureaucrat(std::string name, int grade);
+		//member function
+		std::string getName(void) const;
 		int getGrade(void) const;
 		void signForm(Form &object, std::string reason);
 };

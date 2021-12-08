@@ -1,13 +1,32 @@
 #include "Bureaucrat.hpp"
 
+//constructor / destructor
+Bureaucrat::Bureaucrat(void)
+{
+	std::cout << "[ Bureaucrat default constructor ]" << std::endl;
+}
+
+Bureaucrat::~Bureaucrat(void)
+{
+	std::cout << "[ Bureaucrat destructor ]" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &object) : name(object.name), grade(object.grade)
+{
+	std::cout << "[ Bureaucrat destructor ]" << std::endl;
+}
+
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
+	std::cout << "[ Bureaucrat parameterized constructor ]" << std::endl;
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 }
 
+//member functions
 std::string Bureaucrat::getName(void) const
 {
 	return (this->name);
@@ -32,6 +51,7 @@ void Bureaucrat::increment_grade(void)
 	this->grade--;
 }
 
+//operator overload
 std::ostream& operator<< (std::ostream &stream, const Bureaucrat& object)
 {
 	stream << object.getName() << ", bureaucrat grade " << object.getGrade();

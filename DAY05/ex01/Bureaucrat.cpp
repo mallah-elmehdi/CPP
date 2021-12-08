@@ -1,9 +1,10 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
+//constructor / destructor
+Bureaucrat::Bureaucrat(void) : name("untitled"), grade(0)
 {
-	std::cout << "[ Bureaucrat constructor ]" << std::endl;
+	std::cout << "[ Bureaucrat default constructor ]" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -11,6 +12,12 @@ Bureaucrat::~Bureaucrat(void)
 	std::cout << "[ Bureaucrat destructor ]" << std::endl;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &object) : name(object.name), grade(object.grade)
+{
+	std::cout << "[ Bureaucrat destructor ]" << std::endl;
+}
+
+//member functions
 std::string Bureaucrat::getName(void) const
 {
 	return (this->name);
@@ -29,6 +36,7 @@ void	Bureaucrat::signForm(Form &object, std::string reason)
 		std::cout << this->name << " cannot sign " << object.getName() << " form because " << reason << "." << std::endl;
 }
 
+//operator overload
 std::ostream& operator<< (std::ostream &stream, const Bureaucrat& object)
 {
 	stream << object.getName() << ", bureaucrat grade " << object.getGrade() << ".";

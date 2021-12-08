@@ -9,11 +9,16 @@ class Form
 		const std::string name;
 		bool is_signed;
 	public:
-		Form(std::string name);
+		//constructor / destructor
+		Form(void);
+		Form(const Form &object);
 		~Form(void);
+		Form(std::string name);
+		//member function
 		std::string getName(void) const;
 		bool getSignature(void) const;
 		void beSigned(Bureaucrat &object);
+		//exception subclasses
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -32,6 +37,7 @@ class Form
 		};
 };
 
+//operator overload
 std::ostream& operator<< (std::ostream &stream, const Form& object);
 
 #endif

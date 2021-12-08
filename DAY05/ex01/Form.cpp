@@ -1,9 +1,16 @@
 #include "Form.hpp"
 
+//constructor / destructor
+Form::Form(void): name("untitled")
+{
+	std::cout << "[ Form default constructor ]" << std::endl;
+	is_signed = false;
+}
+
 Form::Form(std::string name): name(name)
 {
-	std::cout << "[ Form constructor ]" << std::endl;
-	this->is_signed = false;
+	std::cout << "[ Form parameterized constructor ]" << std::endl;
+	is_signed = false;
 }
 
 Form::~Form(void)
@@ -11,6 +18,7 @@ Form::~Form(void)
 	std::cout << "[ Form destructor ]" << std::endl;
 }
 
+//member function
 std::string Form::getName(void) const
 {
 	return (this->name);
@@ -38,6 +46,7 @@ void Form::beSigned(Bureaucrat &object)
 	
 }
 
+//operator overload
 std::ostream& operator<< (std::ostream &stream, const Form& object)
 {
 	if (object.getSignature())
