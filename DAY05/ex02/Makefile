@@ -1,4 +1,4 @@
-NAME = bureaucrat_01
+NAME = bureaucrat_02
 
 FLAG = -Wall -Wextra -Werror
 
