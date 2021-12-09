@@ -3,25 +3,45 @@
 
 #include <iostream>
 
-class Form;
-
 class Bureaucrat
 {
 	private:
 		const std::string	name;
-		const int			grade;
+		int					grade;
 	public:
-		//constructor / destructor
+		// * CONSTRUCTOR / DESTRUCTOR *
 		Bureaucrat(void);
 		~Bureaucrat(void);
 		Bureaucrat(const Bureaucrat &object);
-		Bureaucrat(std::string name, int grade);
-		//member function
-		std::string getName(void) const;
-		int getGrade(void) const;
-		void signForm(Form &object, std::string reason);
+		Bureaucrat(const std::string name, int grade);
+		// * MEMBER FUNCTION *
+		// - getter
+		std::string	getName(void) const;
+		int			getGrade(void) const;
+		// - other
+		void		decrement_grade(void);
+		void		increment_grade(void);
+		void		signForm(const std::string message);
+		// * EXCEPTION SUB CLASSES *
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Bureaucrat : [ Exception thrown ] : grade is too hight");
+				}
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Bureaucrat : [ Exception thrown ] : grade is too low");
+				}
+		};
 };
 
+// * OPERATOR OVERLOAD *
 std::ostream& operator<< (std::ostream &stream, const Bureaucrat& object);
 
 #endif

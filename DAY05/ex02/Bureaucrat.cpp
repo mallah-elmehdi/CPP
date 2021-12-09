@@ -2,12 +2,7 @@
 #include "Form.hpp"
 
 // * CONSTRUCTOR / DESTRUCTOR *
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
-{
-	//std::cout << "[ Bureaucrat parameterized constructor ]" << std::endl;
-}
-
-Bureaucrat::Bureaucrat(void) : name("untitled"), grade(0)
+Bureaucrat::Bureaucrat(void)
 {
 	//std::cout << "[ Bureaucrat default constructor ]" << std::endl;
 }
@@ -19,11 +14,19 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &object) : name(object.name), grade(object.grade)
 {
-	//std::cout << "[ Bureaucrat destructor ]" << std::endl;
+	//std::cout << "[ Bureaucrat copy constructor ]" << std::endl;
 }
 
-// * MEMBER FUNCTION *
-// - gette
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
+{
+	//std::cout << "[ Bureaucrat parameterized constructor ]" << std::endl;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+}
+
+// * MEMBER FUNCTIONS *
 std::string Bureaucrat::getName(void) const
 {
 	return (this->name);
@@ -34,13 +37,23 @@ int Bureaucrat::getGrade(void) const
 	return (this->grade);
 }
 
-// - other
-void Bureaucrat::signForm(Form &object, std::string reason)
+void Bureaucrat::decrement_grade(void)
 {
-	if (object.getSignature())
-		std::cout << this->name << " signs " << object.getName() << " form."  << std::endl;
-	else
-		std::cout << this->name << " cannot sign " << object.getName() << " form because " << reason << "." << std::endl;
+	if ((this->grade + 1) > 150)
+		throw Bureaucrat::GradeTooLowException();
+	this->grade++;
+}
+
+void Bureaucrat::increment_grade(void)
+{
+	if ((this->grade - 1) < 1)
+		throw Bureaucrat::GradeTooHighException();
+	this->grade--;
+}
+
+void Bureaucrat::signForm(const std::string message)
+{
+	std::cout << message << std::endl;
 }
 
 void Bureaucrat::executeForm(Form const &form)
@@ -49,9 +62,9 @@ void Bureaucrat::executeForm(Form const &form)
 	std::cout << this->getName() << " executes " << form.getName() << std::endl;
 }
 
-//operator overload
+// * OPERATOR OVERLOAD *
 std::ostream& operator<< (std::ostream &stream, const Bureaucrat& object)
 {
-	stream << object.getName() << ", bureaucrat grade " << object.getGrade() << ".";
+	stream << object.getName() << ", bureaucrat grade " << object.getGrade();
 	return (stream);
 }

@@ -7,40 +7,56 @@ int main(void)
 {
 	try
 	{
-		// * FORMS
-		PresidentialPardonForm presidential_pardon("presidential pardon target");
-		RobotomyRequestForm robotomy_request("robotomy request target");
-		ShrubberyCreationForm shrubbery_creation("shrubbery creation target");
-		// * ABSTACT CLASS
-		//Form this_is_an_abstact_class;
-		// * INCORRECT BEREAUCRAT
-		Bureaucrat incorrect_bereaucrat_1("incorrect_bereaucrat", -10);
-		Bureaucrat incorrect_bereaucrat_2("incorrect_bereaucrat", 0);
-		Bureaucrat incorrect_bereaucrat_3("incorrect_bereaucrat", 166);
-		presidential_pardon.beSigned(incorrect_bereaucrat_1);
-		presidential_pardon.beSigned(incorrect_bereaucrat_2);
-		presidential_pardon.beSigned(incorrect_bereaucrat_3);
-		// * CORRECT BEREAUCRAT
-		Bureaucrat correct_bereaucrat_1("correct_bereaucrat_1", 1);
-		presidential_pardon.beSigned(correct_bereaucrat_1);
-		robotomy_request.beSigned(correct_bereaucrat_1);
-		shrubbery_creation.beSigned(correct_bereaucrat_1);
-		std::cout << presidential_pardon << std::endl;
-		std::cout << robotomy_request << std::endl;
-		std::cout << shrubbery_creation << std::endl;
-		correct_bereaucrat_1.executeForm(presidential_pardon);
-		correct_bereaucrat_1.executeForm(robotomy_request);
-		correct_bereaucrat_1.executeForm(shrubbery_creation);
-		Bureaucrat correct_bereaucrat_2("correct_bereaucrat_2", 100);
-		presidential_pardon.beSigned(correct_bereaucrat_2);
-		robotomy_request.beSigned(correct_bereaucrat_2);
-		shrubbery_creation.beSigned(correct_bereaucrat_2);
-		std::cout << presidential_pardon << std::endl;
-		std::cout << robotomy_request << std::endl;
-		std::cout << shrubbery_creation << std::endl;
-		correct_bereaucrat_2.executeForm(presidential_pardon);
-		correct_bereaucrat_2.executeForm(robotomy_request);
-		correct_bereaucrat_2.executeForm(shrubbery_creation);
+		// * ABSTACT CLASS *
+		//Form abstractClass("I'am an abstract class");
+		// * SHRUBBERYCREATIONFORM *
+		{
+			ShrubberyCreationForm shrubbery("shrubbery target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 130);
+			shrubbery.beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(shrubbery);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 140);
+			shrubbery.beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(shrubbery);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 146);
+			shrubbery.beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(shrubbery);
+		}
+		// * ROBOTOMYREQUESTFORM *
+		{
+			RobotomyRequestForm robot("robot target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 40);
+			robot.beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(robot);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 50);
+			robot.beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(robot);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 80);
+			robot.beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(robot);
+		}
+		// * PRESIDENTIALPARDONFORM *
+		{
+			PresidentialPardonForm president("president target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 40);
+			president.beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(president);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 50);
+			president.beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(president);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 80);
+			president.beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(president);
+		}
 	}
 	catch(const std::exception& beruc)
 	{

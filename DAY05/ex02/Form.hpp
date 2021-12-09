@@ -6,19 +6,17 @@
 class Form
 {
 	private:
-		std::string	name;
-		bool		is_signed;
-		
-		std::string	target;
-		int			sign;
-		int			exec;
-
+		std::string			name;
+		std::string			target;
+		bool				is_signed;
+		int					sign;
+		int					exec;
 	public:
 		// * CONSTRUCTOR / DESTRUCTOR *
 		Form(void);
 		Form(const Form &object);
 		~Form(void);
-		Form(std::string name);
+		Form(const std::string name);
 		// * MEMBER FUNCTION *
 		// - setter
 		void		setName(const std::string &name);
@@ -27,20 +25,20 @@ class Form
 		void		setExec(int exec);
 		// - getter
 		std::string	getTarget(void) const;
-		std::string getName(void) const;
+		std::string	getName(void) const;
+		bool		getSignature(void) const;
 		int			getSign(void) const;
 		int			getExec(void) const;
-		bool		getSignature(void) const;
 		// - other
-		void		beSigned(Bureaucrat &object);
+		void				beSigned(Bureaucrat &object);
 		virtual void		execute(Bureaucrat const & executor) const = 0;
-		//exception subclasses
+		// * EXCEPTION SUBCLASSES *
 		class		GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[ Exception thrown ] : grade is too high");
+					return ("Form : [ Exception thrown ] : grade is too high");
 				}
 		};
 		class		GradeTooLowException : public std::exception
@@ -48,7 +46,7 @@ class Form
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[ Exception thrown ] : grade is too low");
+					return ("Form : [ Exception thrown ] : grade is too low");
 				}
 		};
 		class		FormNotSignedException : public std::exception
@@ -69,7 +67,7 @@ class Form
 		};
 };
 
-//operator overload
+// * OPERATOR OVERLOAD *
 std::ostream& operator<< (std::ostream &stream, const Form& object);
 
 #endif

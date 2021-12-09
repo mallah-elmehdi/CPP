@@ -4,25 +4,22 @@ int main(void)
 {
 	try
 	{
-		//error
-		Bureaucrat mehdi("mehdi", 0);
-		Form cdi("CDI");
-		std::cout << mehdi << std::endl;
-		std::cout << cdi << std::endl;
-		cdi.beSigned(mehdi);
-		//error
-		Bureaucrat mallah("mallah", 151);
-		Form certificate("Certificate");
-		std::cout << mallah << std::endl;
-		std::cout << certificate << std::endl;
-		certificate.beSigned(mallah);
-		//no error
-		Bureaucrat student("student", 5);
-		Form bachelor("bachelor");
-		std::cout << student << std::endl;
-		std::cout << bachelor << std::endl;
-		bachelor.beSigned(student);
-		std::cout << bachelor << std::endl;
+		// * GETTERS *
+		Form jobPermit("Teacher contract");
+		std::cout << jobPermit.getName() << std::endl;
+		std::cout << jobPermit.getExec() << std::endl;
+		std::cout << jobPermit.getSign() << std::endl;
+		std::cout << jobPermit << std::endl;
+		// * SIGN FORM *
+		Form houseAllowance("Allowance contract");
+		Bureaucrat client1("Mehdi", 20);
+		houseAllowance.beSigned(client1);
+		std::cout << houseAllowance << std::endl;
+		// * CAN'T SIGN FORM *
+		Form schoolScholarship("Scholarship");
+		Bureaucrat student("Student", 100);
+		schoolScholarship.beSigned(student);
+		std::cout << schoolScholarship << std::endl;
 	}
 	catch(const std::exception& beruc)
 	{

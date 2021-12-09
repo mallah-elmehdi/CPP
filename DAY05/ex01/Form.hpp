@@ -6,25 +6,31 @@
 class Form
 {
 	private:
-		const std::string name;
-		bool is_signed;
+		const std::string	name;
+		bool				is_signed;
+		const int			sign;
+		const int			exec;
 	public:
-		//constructor / destructor
+		// * CONSTRUCTOR / DESTRUCTOR *
 		Form(void);
 		Form(const Form &object);
 		~Form(void);
-		Form(std::string name);
-		//member function
-		std::string getName(void) const;
-		bool getSignature(void) const;
-		void beSigned(Bureaucrat &object);
-		//exception subclasses
+		Form(const std::string name);
+		// * MEMBER FUNCTION *
+		// - getter
+		std::string	getName(void) const;
+		bool		getSignature(void) const;
+		int			getSign(void) const;
+		int			getExec(void) const;
+		// - other
+		void		beSigned(Bureaucrat &object);
+		// * EXCEPTION SUBCLASSES *
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[ Exception thrown ] : grade is too high");
+					return ("Form : [ Exception thrown ] : grade is too high");
 				}
 		};
 		class GradeTooLowException : public std::exception
@@ -32,12 +38,12 @@ class Form
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("[ Exception thrown ] : grade is too low");
+					return ("Form : [ Exception thrown ] : grade is too low");
 				}
 		};
 };
 
-//operator overload
+// * OPERATOR OVERLOAD *
 std::ostream& operator<< (std::ostream &stream, const Form& object);
 
 #endif

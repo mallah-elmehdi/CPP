@@ -40,7 +40,19 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			std::fstream file;
 			file.open(this->getTarget() + "_shrubbery", std::fstream::out | std::fstream::trunc);
 			if (file.fail())
-				throw FileErrorException();
+				throw Form::FileErrorException();
+			file << " _" << std::endl;
+			file << "| |" << std::endl;
+			file << "| |_ _ __ ___  ___" << std::endl;
+			file << "| __| '__/ _ \\/ _ \\" << std::endl;
+			file << "| |_| | |  __/  __/" << std::endl;
+			file << " \\__|_|  \\___|\\___|" << std::endl;
+			file << " _" << std::endl;
+			file << "| |" << std::endl;
+			file << "| |_ _ __ ___  ___" << std::endl;
+			file << "| __| '__/ _ \\/ _ \\" << std::endl;
+			file << "| |_| | |  __/  __/" << std::endl;
+			file << " \\__|_|  \\___|\\___|" << std::endl;
 			file << " _" << std::endl;
 			file << "| |" << std::endl;
 			file << "| |_ _ __ ___  ___" << std::endl;
@@ -49,8 +61,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			file << " \\__|_|  \\___|\\___|" << std::endl;
 		}
 		else
-			throw GradeTooLowException();
+			throw Form::GradeTooLowException();
 	}
 	else
-		throw FormNotSignedException();
+		throw Form::FormNotSignedException();
 }

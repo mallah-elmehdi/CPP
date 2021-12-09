@@ -5,19 +5,57 @@ int main(void)
 {
 	try
 	{
-		// * FORMS
-		Intern intern;
-		Form *form = intern.makeForm("PresidentialPardonForm", "presidential pardon target");
-		//Form *form = intern.makeForm("RobotomyRequestForm", "robotomy request target");
-		//Form *form = intern.makeForm("ShrubberyCreationForm", "shrubbery creation target");
-		//Form *form = intern.makeForm("wrongForm", "wrong target");
-		// * TESTS
-		if (form)
+		Intern writer;
+		Form *form;
+		// * ABSTACT CLASS *
+		//Form abstractClass("I'am an abstract class");
+		// * SHRUBBERYCREATIONFORM *
 		{
-			Bureaucrat correct_bereaucrat_1("correct_bereaucrat_1", 1);
-			form->beSigned(correct_bereaucrat_1);
-			std::cout << *form << std::endl;
-			correct_bereaucrat_1.executeForm(*form);
+			form = writer.makeForm("ShrubberyCreationForm", "shrubbery target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 130);
+			form->beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(*form);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 140);
+			form->beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(*form);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 146);
+			form->beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(*form);
+		}
+		// * ROBOTOMYREQUESTFORM *
+		{
+			form = writer.makeForm("RobotomyRequestForm", "robot target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 40);
+			form->beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(*form);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 50);
+			form->beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(*form);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 80);
+			form->beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(*form);
+		}
+		// * PRESIDENTIALPARDONFORM *
+		{
+			form = writer.makeForm("PresidentialPardonForm", "president target");
+			// - can sign and execute
+			Bureaucrat userCanSignAndExecute("userCanSignAndExecute", 40);
+			form->beSigned(userCanSignAndExecute);
+			userCanSignAndExecute.executeForm(*form);
+			// - can only sign
+			Bureaucrat userCanOnlySign("userCanOnlySign", 50);
+			form->beSigned(userCanOnlySign);
+			userCanOnlySign.executeForm(*form);
+			// - can't sign or execute
+			Bureaucrat userCantSignOrExecute("userCantSignOrExecute", 80);
+			form->beSigned(userCantSignOrExecute);
+			userCantSignOrExecute.executeForm(*form);
 		}
 	}
 	catch(const std::exception& beruc)

@@ -43,8 +43,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 				std::cout << "it’s a failure" << std::endl;
 		}
 		else
-			throw GradeTooLowException();
+			throw Form::GradeTooLowException();
 	}
 	else
-		throw FormNotSignedException();
+		throw Form::FormNotSignedException();
 }

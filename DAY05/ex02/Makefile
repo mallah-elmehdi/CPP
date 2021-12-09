@@ -1,4 +1,4 @@
-NAME = bureaucrat_02
+NAME = exceptions_02
 
 FLAG = -Wall -Wextra -Werror
 
