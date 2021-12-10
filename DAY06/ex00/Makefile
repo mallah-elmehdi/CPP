@@ -2,7 +2,7 @@ NAME = convert
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp Convert.cpp
+FILE = main.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 
