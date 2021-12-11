@@ -15,6 +15,7 @@ void identify(Base* p)
 		std::cout << "A" << std::endl;
 		return;
 	}
+	Bchecker = dynamic_cast<B*>(p);
 	if (Bchecker)
 	{
 		std::cout << "B" << std::endl;

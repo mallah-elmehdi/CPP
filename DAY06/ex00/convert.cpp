@@ -70,8 +70,6 @@ void Convert::checkString(void)
 			return;
 		}
 	}
-	if (!check(this->stringValue))
-		throw Error::ParsingException(); 
 	if (isDigit(this->stringValue))
 	{
 		this->doubleValue = toDouble(this->stringValue);
