@@ -1,8 +1,8 @@
-NAME = convert
+NAME = reinterpret_cast
 
 FLAG = -Wall -Wextra -Werror
 
-FILE = main.cpp Convert.cpp otherFunctions.cpp
+FILE = main.cpp Data.cpp
 
 FILE_OBJ = $(FILE:.cpp=.o)
 
