@@ -1,8 +1,8 @@
 #ifndef _MAX_HPP
 #define _MAX_HPP
 
-template <typename T>
-T max(T x, T y)
+template <typename type>
+type max(type x, type y)
 {
 	return (y >= x) ? y : x;
 }

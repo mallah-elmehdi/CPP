@@ -1,12 +1,12 @@
 #ifndef _SWAP_HPP
 #define _SWAP_HPP
 
-template <typename T>
-void swap(T *x, T *y)
+template <typename type>
+void swap(type &x, type &y)
 {
-	T temp = *x;
-	*x = *y;
-	*y = temp;
+	type temp = x;
+	x = y;
+	y = temp;
 }
 
 #endif
