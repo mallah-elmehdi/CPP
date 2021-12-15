@@ -12,7 +12,7 @@ int main()
 			vect[i] = i;
 		std::cout << *easyfind(vect, 0) << std::endl;
 		std::cout << *easyfind(vect, 5) << std::endl;
-		std::cout << *easyfind(vect, 10) << std::endl;
+		//std::cout << *easyfind(vect, 10) << std::endl;
 		/* list */
 		std::cout << "* LIST *" << std::endl;
 		std::list<int> lis;
@@ -20,7 +20,7 @@ int main()
 			lis.push_back(i);
 		std::cout << *easyfind(lis, 0) << std::endl;
 		std::cout << *easyfind(lis, 5) << std::endl;
-		std::cout << *easyfind(lis, 10) << std::endl;
+		//std::cout << *easyfind(lis, 10) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
